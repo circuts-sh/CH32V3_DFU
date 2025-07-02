@@ -1,0 +1,9 @@
+DFU_APP_PATH ?= .
+WCHEVT_SDK_BASE = $(DFU_APP_PATH)/..
+export WCHEVT_SDK_BASE
+
+DEBUG?=n
+BOARD?=CH32V305_DEFAULT
+PORT_SPEED?=hs
+
+include $(WCHEVT_SDK_BASE)/project.build

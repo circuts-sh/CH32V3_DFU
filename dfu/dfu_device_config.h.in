@@ -1,0 +1,24 @@
+#ifndef DFU_DEVICE_CONFIG
+#define DFU_DEVICE_CONFIG
+
+/*Memory Config*/
+#define FLASH_SIZE_KB @FLASH_SIZE_KB@
+#define FLASH_DFU_BOOTLDR_SIZE_KB @FLASH_DFU_BOOTLDR_SIZE_KB@
+#define FLASH_APP_SIZE_KB @FLASH_APP_SIZE_KB@
+
+
+/* DFU marker in the RAM to enter into dfu mode from the main app */
+#define MARKER_SIZE 8
+#define MARKER_ADDR 0x20000000ULL
+#define MARKER_VALUE "DEADBEEFCC00FFEEULL"
+
+
+/*USB Config*/
+#define USBD_VID           0x1A86
+#define USBD_PID           0x5537
+#define USBD_MAX_POWER     150
+#define USBD_LANGID_STRING 1033
+
+// #define FLASH_DESC_STR "@Internal Flash   /0x08000000/@FLASH_LAYOUT@"
+#define FLASH_DFU_STRING "@Internal Flash /0x00000000/@FLASH_DFU_BOOTLDR_SIZE_KB@*001Ka,@FLASH_APP_SIZE_KB@*001Kg"
+#endif
